@@ -42,8 +42,9 @@ class _HomeState extends State<Home> {
   }
 
   Future getWeather() async {
+    var apiKey = "";
     var uri = Uri.parse(
-        "https://api.openweathermap.org/data/2.5/weather?q=Boston&appid=5e0bd7069a467836474e1e088032a020");
+        "https://api.openweathermap.org/data/2.5/weather?q=Boston&appid=${apiKey}");
     http.Response response = await http.get(uri);
     var results = jsonDecode(response.body);
     setState(() {
